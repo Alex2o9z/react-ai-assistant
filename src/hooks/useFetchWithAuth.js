@@ -18,6 +18,7 @@ export const useFetchWithAuth = () => {
         const headers = {
             ...options.headers,
             Authorization: `Bearer ${token}`,
+            "ngrok-skip-browser-warning": "true",
             ...(isFormData ? {} : { "Content-Type": "application/json" }),
         };
 
