@@ -1,0 +1,7 @@
+export const isDocumentFile = (fileName) =>
+    /\.(pdf|docx|txt)$/i.test(fileName) ||
+    /^(https?:\/\/)/i.test(fileName) && !isAudioVideoUrl(fileName);
+
+export const isAudioVideoUrl = (fileName) =>
+    /\.(mp3|wav|m4a|ogg|flac|mp4|webm|mov|avi|mkv)$/i.test(fileName) ||
+    /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be|vimeo\.com|drive\.google\.com|soundcloud\.com|facebook\.com|tiktok\.com)/i.test(fileName);
