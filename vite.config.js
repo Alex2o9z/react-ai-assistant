@@ -10,9 +10,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(),],
+  base: process.env.VITE_BASE_PATH || "/react-ai-assistant",
   server: {
     proxy: {
-      '/api': 'http://localhost:5000', // forward API calls to .NET backend
+      '/api': 'http://localhost:5000',
     },
   },
   resolve: {
